@@ -41,8 +41,8 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
     db_name = os.getenv("PERSONAL_DATA_DB_NAME", "")
     db_user = os.getenv("PERSONAL_DATA_DB_USERNAME", "root")
     db_pwd = os.getenv("PERSONAL_DATA_DB_PASSWORD", "")
-    connection = mysql.connector.connect(host=db_host, port=3306, 
-                                         user=db_user, password=db_pwd, 
+    connection = mysql.connector.connect(host=db_host, port=3306,
+                                         user=db_user, password=db_pwd,
                                          database=db_name)
     return connection
 
@@ -50,8 +50,8 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
 def main():
     """User records in a table."""
 
-    input_fileds = ["name","email","phone","ssn",
-                     "password","ip","last_login","user_agent"]
+    input_fileds = ["name", "email", "phone", "ssn", "password",
+                    "ip", "last_login", "user_agent"]
     query = "SELECT {} FROM users;".format("".join(input_fileds, ","))
     info_logger = get_logger()
     connection = get_db()
