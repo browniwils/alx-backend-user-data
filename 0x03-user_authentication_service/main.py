@@ -39,7 +39,7 @@ def log_in_wrong_password(email: str, password: str) -> None:
 
 def log_in(email: str, password: str) -> str:
     """Tests for logging in."""
-    
+
     url = "{}/sessions".format(BASE_URL)
     body = {
         'email': email,
